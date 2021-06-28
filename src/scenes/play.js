@@ -11,7 +11,10 @@ class Play extends Phaser.Scene {
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
         // load audio
         this.load.audio('sfx_select', './assets/blip_select12.wav');
-        this.load.audio('sfx_explosion', './assets/explosion38.wav');
+        this.load.audio('sfx_explosion4', './assets/explosion38.wav');
+        this.load.audio('sfx_explosion3', './assets/explosion3.wav');
+        this.load.audio('sfx_explosion2', './assets/explosion2.wav');
+        this.load.audio('sfx_explosion1', './assets/explosion1.wav');
         this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
       }
     create(){
@@ -217,6 +220,14 @@ class Play extends Phaser.Scene {
         return false;
       }
     }
+    randomExplodeSfx(){
+      let rand = 4*Math.random();
+      if(rand>=3){this.sound.play('sfx_explosion4');  }
+      else if(rand>=2){this.sound.play('sfx_explosion3');  }
+      else if(rand>=1){this.sound.play('sfx_explosion2');  }
+      else{this.sound.play('sfx_explosion1');  }
+    }
+
     shipExplode(ship) {
       // temporarily hide ship
       ship.alpha = 0;
@@ -228,6 +239,6 @@ class Play extends Phaser.Scene {
         ship.alpha = 1;                       // make ship visible again
         boom.destroy();                       // remove explosion sprite
       });    
-      this.sound.play('sfx_explosion');      
+      this.randomExplodeSfx();
     }
 }

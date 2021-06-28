@@ -16,5 +16,7 @@ Allow the player to control the Rocket after it's fired (5) --> Finished
 
 Implement the 'FIRE' UI text from the original game (5) -->Finished
 
-Total Planned: 90
-Total Finished: 90
+Create 4 new explosion SFX and randomize which one plays on impact (10)-->Finished
+
+Total Planned: 100
+Total Finished: 100
