@@ -12,5 +12,9 @@ Create a new scrolling tile sprite for the background (5) -->Finished
 
 Create a new spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points (20) --> Finished
 
-Total Planned: 80
-Total Finished: 80
+Allow the player to control the Rocket after it's fired (5) --> Finished
+
+Implement the 'FIRE' UI text from the original game (5) -->Finished
+
+Total Planned: 90
+Total Finished: 90
