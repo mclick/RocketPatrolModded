@@ -8,5 +8,7 @@ Implement a simultaneous two-player mode (30) -> Finished
 
 Track a high score that persists across scenes and display it in the UI (5) -->Finished
 
-Total Planned: 55
-Total Finished: 55
+Create a new scrolling tile sprite for the background (5) -->Finished
+
+Total Planned: 60
+Total Finished: 6-

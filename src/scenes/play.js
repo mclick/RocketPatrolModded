@@ -15,7 +15,7 @@ class Play extends Phaser.Scene {
       }
     create(){
         // place tile sprite
-        this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);
+        this.starfield = this.add.tileSprite(0, 0, 1010, 480, 'starfield').setOrigin(0, 0);
         // green UI background
         this.add.rectangle(0, borderUISize + borderPadding, game.config.width, borderUISize * 2, 0x00FF00).setOrigin(0, 0);
         // white borders
@@ -118,7 +118,7 @@ class Play extends Phaser.Scene {
         if(highScore<this.p2Score){highScore = this.p2Score;}
         this.gameOver = true;
       }
-      this.starfield.tilePositionX -= 4;
+      this.starfield.tilePositionX += 2;
       if(!this.gameOver){
         this.p1Rocket.update();
         this.p2Rocket.update();
