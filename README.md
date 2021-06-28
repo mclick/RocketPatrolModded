@@ -1,6 +1,8 @@
 # RocketPatrolModded
 modded version of Rocket Patrol
 
-Display Time Remaining (10) -> Finished
+Implement a new timing/scoring mechanism that adds time to the clock for successful hits (20) -> Finished
+    ->Display Time Remaining (10) -> Finished
 
-Total: 10
+Total Planned: 20
+Total Finished: 20

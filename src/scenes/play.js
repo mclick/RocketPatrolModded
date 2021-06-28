@@ -150,6 +150,8 @@ class Play extends Phaser.Scene {
       });    
       this.p1Score += ship.points;
       this.scoreLeft.text = this.p1Score;   
+      this.timeRemaining += ship.points/10;
+      this.clockRight.text = this.timeRemaining;
       this.sound.play('sfx_explosion');      
     }
 }
