@@ -6,5 +6,7 @@ Implement a new timing/scoring mechanism that adds time to the clock for success
 
 Implement a simultaneous two-player mode (30) -> Finished
 
-Total Planned: 50
-Total Finished: 50
+Track a high score that persists across scenes and display it in the UI (5) -->Finished
+
+Total Planned: 55
+Total Finished: 55

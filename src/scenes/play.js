@@ -114,6 +114,8 @@ class Play extends Phaser.Scene {
         this.clockRight.text = this.timeRemaining;
         this.add.text(game.config.width/2, game.config.height/2, 'GAME OVER', scoreConfig).setOrigin(0.5);
         this.add.text(game.config.width/2, game.config.height/2 + 64, 'Press (R) to Restart or <- for Menu', scoreConfig).setOrigin(0.5);
+        if(highScore<this.p1Score){highScore = this.p1Score;}
+        if(highScore<this.p2Score){highScore = this.p2Score;}
         this.gameOver = true;
       }
       this.starfield.tilePositionX -= 4;
