@@ -6,6 +6,7 @@ class Play extends Phaser.Scene {
         // load images/tile sprites
         this.load.image('rocket', './assets/rocket.png');
         this.load.image('spaceship', './assets/spaceship.png');
+        this.load.image('swiftship', './assets/swiftShip.png');
         this.load.image('starfield', './assets/starfield.png');
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
         // load audio
@@ -41,6 +42,7 @@ class Play extends Phaser.Scene {
         this.ship01 = new Spaceship(this, game.config.width + borderUISize*6, borderUISize*4, 'spaceship', 0, 30).setOrigin(0, 0);
         this.ship02 = new Spaceship(this, game.config.width + borderUISize*3, borderUISize*5 + borderPadding*2, 'spaceship', 0, 20).setOrigin(0,0);
         this.ship03 = new Spaceship(this, game.config.width, borderUISize*6 + borderPadding*4, 'spaceship', 0, 10).setOrigin(0,0);
+        this.swift01 = new Swiftship(this,game.config.width, borderUISize*8+borderPadding*5, 'swiftship', 0, 50).setOrigin(0, 0);
         
         //Explosion Animation
         this.anims.create({
@@ -125,6 +127,7 @@ class Play extends Phaser.Scene {
         this.ship01.update();
         this.ship02.update();
         this.ship03.update();
+        this.swift01.update();
       }
       if(this.checkCollision(this.p1Rocket, this.ship03)) {
         this.p1Rocket.reset();
@@ -173,6 +176,22 @@ class Play extends Phaser.Scene {
         this.timeRemaining += this.ship01.points/10;
         this.clockRight.text = this.timeRemaining;
         this.shipExplode(this.ship01);
+    }
+    if(this.checkCollision(this.p1Rocket, this.ship01)) {
+      this.p1Rocket.reset();
+      this.p1Score += this.swift01.points;
+      this.scoreLeft.text = this.p1Score;   
+      this.timeRemaining += this.swift01.points/10;
+      this.clockRight.text = this.timeRemaining;
+      this.shipExplode(this.swift01);
+    }
+    if(this.checkCollision(this.p2Rocket, this.swift01)) {
+      this.p2Rocket.reset();
+      this.p2Score += this.swift01.points;
+      this.scoreLeftp2.text = this.p2Score;   
+      this.timeRemaining += this.swift01.points/10;
+      this.clockRight.text = this.timeRemaining;
+      this.shipExplode(this.swift01);
     }
   }
     checkCollision(rocket,ship){
